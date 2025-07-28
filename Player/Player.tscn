@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmjkfwdgupe7i"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_2oofn"]
+[ext_resource type="Texture2D" uid="uid://c62jyma03pypb" path="res://Player/Player (1).png" id="2_58slx"]
+[ext_resource type="Texture2D" uid="uid://dc4nvohuj70rn" path="res://Player/Player (2).png" id="3_58g1h"]
+[ext_resource type="FontFile" uid="uid://c64fntrim6mvj" path="res://PixelFont (1).ttf" id="4_m1k7m"]
+
+[sub_resource type="Curve" id="Curve_tckgh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eebc"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gc0kp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_58slx")
+}],
+"loop": true,
+"name": &"Dive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_58g1h")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e53pu"]
+font = ExtResource("4_m1k7m")
+font_size = 32
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2oofn")
+
+[node name="Splash" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 2000
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 26.0
+scale_amount_curve = SubResource("Curve_tckgh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6eebc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gc0kp")
+animation = &"Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="InvulnTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="Node2D" parent="UI"]
+
+[node name="Timer" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 23.0
+offset_top = -28.0
+offset_right = 63.0
+offset_bottom = -4.0
+text = "1"
+label_settings = SubResource("LabelSettings_e53pu")
+
+[connection signal="timeout" from="InvulnTimer" to="." method="_on_invuln_timer_timeout"]

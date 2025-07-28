@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhxhyxa4ajsjx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nerkl"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Full",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Half",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"None",
+"speed": 5.0
+}]
+
+[node name="Heart" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_nerkl")
+animation = &"None"

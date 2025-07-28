@@ -1,0 +1,156 @@
+[gd_scene load_steps=20 format=3 uid="uid://ct3y27bwidxv"]
+
+[ext_resource type="Script" path="res://Hazards/Out/RubberDuck/RubberDuck.gd" id="1_mr57p"]
+[ext_resource type="Texture2D" uid="uid://emgd0m6gogn3" path="res://Hazards/Out/RubberDuck/Textures/Duck (15).png" id="2_1t7ud"]
+[ext_resource type="Texture2D" uid="uid://mrlmcgly45dn" path="res://Hazards/Out/RubberDuck/Textures/Duck (1).png" id="3_hiymy"]
+[ext_resource type="Texture2D" uid="uid://d1yhw3wg236d5" path="res://Hazards/Out/RubberDuck/Textures/Duck (2).png" id="4_2rfsk"]
+[ext_resource type="Texture2D" uid="uid://b48yn4fdewok1" path="res://Hazards/Out/RubberDuck/Textures/Duck (3).png" id="5_sggp4"]
+[ext_resource type="Texture2D" uid="uid://dtpgms1gyt4fk" path="res://Hazards/Out/RubberDuck/Textures/Duck (4).png" id="6_mtedo"]
+[ext_resource type="Texture2D" uid="uid://jyeorixx80j2" path="res://Hazards/Out/RubberDuck/Textures/Duck (5).png" id="7_8f4pl"]
+[ext_resource type="Texture2D" uid="uid://cimt5f7e7f5g0" path="res://Hazards/Out/RubberDuck/Textures/Duck (6).png" id="8_y5s63"]
+[ext_resource type="Texture2D" uid="uid://boxorml7gcy1s" path="res://Hazards/Out/RubberDuck/Textures/Duck (7).png" id="9_8xlo5"]
+[ext_resource type="Texture2D" uid="uid://dti6qttfgj4q4" path="res://Hazards/Out/RubberDuck/Textures/Duck (8).png" id="10_kr1ma"]
+[ext_resource type="Texture2D" uid="uid://b1atl0nu8y7q3" path="res://Hazards/Out/RubberDuck/Textures/Duck (9).png" id="11_5codx"]
+[ext_resource type="Texture2D" uid="uid://b8rt250f1i0gu" path="res://Hazards/Out/RubberDuck/Textures/Duck (10).png" id="12_1ga88"]
+[ext_resource type="Texture2D" uid="uid://cjfbgqoh6mele" path="res://Hazards/Out/RubberDuck/Textures/Duck (11).png" id="13_crojm"]
+[ext_resource type="Texture2D" uid="uid://v5m6hrut5pw" path="res://Hazards/Out/RubberDuck/Textures/Duck (12).png" id="14_gmbau"]
+[ext_resource type="Texture2D" uid="uid://xcqv1qnchldk" path="res://Hazards/Out/RubberDuck/Textures/Duck (13).png" id="15_anjme"]
+[ext_resource type="Texture2D" uid="uid://dpsw5xf6r5n0b" path="res://Hazards/Out/RubberDuck/Textures/Duck (14).png" id="16_hfcfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t3yg"]
+size = Vector2(28, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woccg"]
+size = Vector2(28, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgg3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1t7ud")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hiymy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2rfsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sggp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mtedo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8f4pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y5s63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8xlo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kr1ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5codx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1ga88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_crojm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gmbau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_anjme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hfcfq")
+}],
+"loop": false,
+"name": &"Rise",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_hfcfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_anjme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gmbau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_crojm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1ga88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5codx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kr1ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8xlo5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y5s63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8f4pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mtedo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sggp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2rfsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hiymy")
+}],
+"loop": false,
+"name": &"Sink",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hiymy")
+}],
+"loop": true,
+"name": &"Warn",
+"speed": 5.0
+}]
+
+[node name="RubberDuck" type="CharacterBody2D"]
+script = ExtResource("1_mr57p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_3t3yg")
+disabled = true
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_woccg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bgg3e")
+animation = &"Sink"

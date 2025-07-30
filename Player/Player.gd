@@ -32,6 +32,7 @@ const KNOCKBACK_FORCE := 400.0
 var MaxHealth = 6
 var CurrentHealth = MaxHealth
 
+var active := false
 var invulnerable := false  # can be referenced externally
 var dead := false
 
@@ -99,6 +100,7 @@ func _physics_process(delta):
 		if is_dashing:
 			anim_sprite.play("Dive")
 		elif velocity.length() > 0:
+			active = true
 			anim_sprite.play("Idle")
 		else:
 			anim_sprite.play("Idle")
@@ -196,6 +198,8 @@ func die():
 func _process(delta: float) -> void:
 	if dead:
 		return
+	if active:
+		$Camera2D/TimerLabel.text = GameTime.TimerDisplay
 	
 	
 	var mouse_pos: Vector2 = get_global_mouse_position()

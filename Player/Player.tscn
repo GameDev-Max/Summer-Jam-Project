@@ -32,11 +32,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_e53pu"]
+[sub_resource type="LabelSettings" id="LabelSettings_ulikn"]
 font = ExtResource("4_m1k7m")
-font_size = 32
+font_size = 64
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_2oofn")
 
 [node name="Splash" type="CPUParticles2D" parent="."]
@@ -66,6 +66,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="TimerLabel" type="Label" parent="Camera2D"]
+z_index = 100
+texture_filter = 1
+offset_left = 194.0
+offset_top = -160.0
+offset_right = 286.0
+offset_bottom = -96.0
+text = "Move
+"
+label_settings = SubResource("LabelSettings_ulikn")
+
 [node name="InvulnTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
@@ -73,14 +84,5 @@ autostart = true
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" type="Node2D" parent="UI"]
-
-[node name="Timer" type="Label" parent="UI"]
-texture_filter = 1
-offset_left = 23.0
-offset_top = -28.0
-offset_right = 63.0
-offset_bottom = -4.0
-text = "1"
-label_settings = SubResource("LabelSettings_e53pu")
 
 [connection signal="timeout" from="InvulnTimer" to="." method="_on_invuln_timer_timeout"]

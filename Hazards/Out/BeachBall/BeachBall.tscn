@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dacge5t6ygyhb"]
+
+[ext_resource type="Texture2D" uid="uid://bws0oksa4p2sb" path="res://Hazards/Out/BeachBall/Textures/Shadow.png" id="1_8wc3k"]
+[ext_resource type="Script" path="res://Hazards/Out/BeachBall/BeachBall.gd" id="1_frtix"]
+[ext_resource type="Texture2D" uid="uid://dotdhf4vhlxfy" path="res://Hazards/Out/BeachBall/Textures/BeachBall.png" id="2_50jej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h7ee5"]
+radius = 7.0
+
+[node name="BeachBall" type="CharacterBody2D"]
+script = ExtResource("1_frtix")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_8wc3k")
+
+[node name="Ball" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_50jej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h7ee5")
+disabled = true
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_h7ee5")

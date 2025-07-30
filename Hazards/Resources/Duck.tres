@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="HazardResource" load_steps=3 format=3 uid="uid://ivnatpprjd1u"]
+
+[ext_resource type="Script" path="res://HazardResource.gd" id="1_58a1y"]
+[ext_resource type="PackedScene" uid="uid://ct3y27bwidxv" path="res://Hazards/In/RubberDuck/RubberDuck.tscn" id="1_i8w1q"]
+
+[resource]
+script = ExtResource("1_58a1y")
+Hazard = ExtResource("1_i8w1q")
+SpawnerArea = "In"

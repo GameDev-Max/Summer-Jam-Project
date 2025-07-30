@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="HazardResource" load_steps=3 format=3 uid="uid://ddvb15u842k8i"]
+
+[ext_resource type="PackedScene" uid="uid://dacge5t6ygyhb" path="res://Hazards/Out/BeachBall/BeachBall.tscn" id="1_jn5w2"]
+[ext_resource type="Script" path="res://HazardResource.gd" id="2_neiuj"]
+
+[resource]
+script = ExtResource("2_neiuj")
+Hazard = ExtResource("1_jn5w2")
+SpawnerArea = "Out"
